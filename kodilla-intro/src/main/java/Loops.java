@@ -8,7 +8,7 @@ public class Loops {
     }
 
     public static void main(String[] args) {
-        int[] numbers = new int[] {7, 3, 1};
+        int[] numbers = new int[] {1, 3, 1};
         int result = sum(numbers);
         System.out.println(result);
     }

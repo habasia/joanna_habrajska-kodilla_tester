@@ -21,7 +21,7 @@ public class LeapYear {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the year: ");
         int year = scanner.nextInt();
-        if (isLeapYear(year) == true) {
+        if (isLeapYear(year)) {
             System.out.println(year + " is a leap year");
         } else {
             System.out.println(year + " isn't a leap year");
