@@ -30,6 +30,7 @@ public class RandomNumbers {
         return this.randomNumbersArray[this.size - 1];
     }
 
+    //zwraca max
     public int getMinimum() {
         int min = this.max;
         for (int i = 0; i < this.randomNumbersArray.length; i++) {
@@ -40,6 +41,7 @@ public class RandomNumbers {
         return min;
     }
 
+    //zwraca min
     public int getMaximum() {
         int max = this.min;
         for (int i = 0; i < this.randomNumbersArray.length; i++) {
