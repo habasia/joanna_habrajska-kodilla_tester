@@ -1,3 +1,4 @@
+// troche nie wiem jak tu maina wpasować, zawsze go tworze w osobnej klasie
 public class Application {
     public String name;
     public double age;
