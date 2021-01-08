@@ -12,9 +12,8 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        String name = "Adam";
-        double age = 40.5;
-        double height = 178;
+        Application application = new Application();
+        application.checkFeatures();
     }
 
     public String getName() {
@@ -38,4 +37,5 @@ public class Application {
             }
         }
     }
+
 }

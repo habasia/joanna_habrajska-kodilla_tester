@@ -12,8 +12,7 @@ public class FirstClass {
         notebookInformation(oldNotebook);
     }
 
-    public static void notebookInformation (Notebook notebook)
-    {
+    public static void notebookInformation (Notebook notebook) {
         System.out.println("Notebook weight is " + notebook.weight);
         notebook.checkWeight();
 
@@ -25,5 +24,4 @@ public class FirstClass {
 
         notebook.checkIfWorthIt();
     }
-
 }

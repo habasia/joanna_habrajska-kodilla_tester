@@ -17,8 +17,7 @@ public class Grades {
     }
 
     public int returnLastAddedGrade() {
-        int lastAddedGrade = grades[this.size - 1];
-        return lastAddedGrade;
+        return grades[this.size - 1];
     }
 
     public double returnAverage() {
@@ -27,7 +26,6 @@ public class Grades {
             sum += grades[i];
             System.out.println(sum);
         }
-        double average = sum/this.size;
-        return average;
+        return sum/ this.size;
     }
 }
