@@ -40,10 +40,6 @@ public class CashMachine {
         }
     }
 
-    public double[] getValues() {
-        return payments;
-    }
-
     public double getBalance() {
         /* for (double i : payments) {
             this.balance += i;

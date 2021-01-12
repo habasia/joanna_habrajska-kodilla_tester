@@ -28,7 +28,7 @@ public class Bank {
 
     //siegniecie do metod bankomatow
     public void paymentAtSpecificCashMachine(double value, int cashMachineNumber) {
-        if (cashMachineNumber < cashMachines.length) {
+        if (cashMachineNumber <= cashMachines.length) {
             cashMachines[cashMachineNumber - 1].payment(value);
         }
     }
@@ -76,7 +76,7 @@ public class Bank {
         for (int i = 0; i < cashMachines.length; i++) {
             totalAveragePayment += cashMachines[i].getAveragePayment();
         }
-        totalAveragePayment /= (cashMachines.length - 1);
+        totalAveragePayment /= (cashMachines.length);
         return totalAveragePayment;
     }
 
@@ -85,7 +85,7 @@ public class Bank {
         for (int i = 0; i < cashMachines.length; i++) {
             totalAverageWithdrawal += cashMachines[i].getAverageWithdrawal();
         }
-        totalAverageWithdrawal /= (cashMachines.length - 1);
+        totalAverageWithdrawal /= (cashMachines.length);
         return totalAverageWithdrawal;
     }
 
