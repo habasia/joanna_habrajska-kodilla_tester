@@ -22,7 +22,7 @@ public class CashMachine {
 
     public void payment(double payment) {
         // sprawdza czy środki dostępne są w atm
-        if (payment < 0 && payment < - getBalance()) {
+        if (payment + this.balance < 0) {
             System.out.println("The amount exceeds the funds available at the ATM");
         } else {
             this.size++;
@@ -45,8 +45,14 @@ public class CashMachine {
     }
 
     public double getBalance() {
-        for (double i : payments) {
+        /* for (double i : payments) {
             this.balance += i;
+        }
+        return this.balance;*/
+
+        for (int i = 0; i < this.size; i++) {
+            this.balance += payments[i];
+            System.out.println(this.balance + " " + payments[i]);
         }
         return this.balance;
     }

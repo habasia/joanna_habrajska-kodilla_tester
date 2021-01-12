@@ -2,10 +2,16 @@ package com.kodilla.bank.homework;
 
 public class Bank {
     private CashMachine[] cashMachines;
+    private int numberOfCashMachines;
 
-    public Bank() {
+    public Bank(int numberOfCashMachines) {
+        if (numberOfCashMachines < 0) {
+            this.numberOfCashMachines = 0;
+        } else {
+            this.numberOfCashMachines = numberOfCashMachines;
+        }
         // tyle bankomatów
-        this.cashMachines = new CashMachine[4];
+        this.cashMachines = new CashMachine[numberOfCashMachines];
 
         //inicjalizacja
         for (int i = 0; i < cashMachines.length; i++) {
@@ -22,19 +28,21 @@ public class Bank {
 
     //siegniecie do metod bankomatow
     public void paymentAtSpecificCashMachine(double value, int cashMachineNumber) {
-        cashMachines[cashMachineNumber].payment(value);
+        if (cashMachineNumber < cashMachines.length) {
+            cashMachines[cashMachineNumber - 1].payment(value);
+        }
     }
 
     public int getPaymentCountAtSpecificCashMachine(int cashMachineNumber) {
-        return cashMachines[cashMachineNumber].getPaymentCount();
+        return cashMachines[cashMachineNumber - 1].getPaymentCount();
     }
 
     public int getWithdrawalCountAtSpecificCashMachine(int cashMachineNumber) {
-        return cashMachines[cashMachineNumber].getWithdrawalCount();
+        return cashMachines[cashMachineNumber - 1].getWithdrawalCount();
     }
 
-    public double getSpecificCashMachineBalance(int number) {
-        return cashMachines[number].getBalance();
+    public double getSpecificCashMachineBalance(int cashMachineNumber) {
+        return cashMachines[cashMachineNumber - 1].getBalance();
     }
 
     //metody banku
@@ -79,5 +87,9 @@ public class Bank {
         }
         totalAverageWithdrawal /= (cashMachines.length - 1);
         return totalAverageWithdrawal;
+    }
+
+    public int getNumberOfCashMachines() {
+        return this.numberOfCashMachines;
     }
 }
