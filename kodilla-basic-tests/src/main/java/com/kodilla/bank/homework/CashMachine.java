@@ -54,6 +54,7 @@ public class CashMachine {
     }
 
     public int getPaymentCount() {
+
         return paymentCount;
     }
 
@@ -73,6 +74,9 @@ public class CashMachine {
     }
 
     public double getAverageWithdrawal() {
+        if (payments.length == 0) {
+            return 0;
+        }
         int count = 0;
         for (double i : payments) {
             if (i < 0) {

@@ -4,7 +4,7 @@ public class Bank {
     private CashMachine[] cashMachines;
     private int numberOfCashMachines;
 
-    public Bank(int numberOfCashMachines) {
+    public Bank() {
         if (numberOfCashMachines < 0) {
             this.numberOfCashMachines = 0;
         } else {
@@ -25,6 +25,9 @@ public class Bank {
     mi sie tylko jej kopia. i jak wykonuje jakies operacje na tej tabeli, to mi sie nie zapisuje
     w tablicy obiektow w banku ajajajajaj trudne rzeczy*/
 
+
+    // 1. w cash machine osobne metody do countow
+    // 2. kopiowanie tablic zamiant inicjalizacji
 
     //siegniecie do metod bankomatow
     public void paymentAtSpecificCashMachine(double value, int cashMachineNumber) {
@@ -73,8 +76,8 @@ public class Bank {
 
     public double getTotalAveragePayment() {
         int totalAveragePayment = 0;
-        for (int i = 0; i < cashMachines.length; i++) {
-            totalAveragePayment += cashMachines[i].getAveragePayment();
+        for (CashMachine i: cashMachines) {
+            totalAveragePayment += i.getAveragePayment();
         }
         totalAveragePayment /= (cashMachines.length);
         return totalAveragePayment;

@@ -1,6 +1,5 @@
 package com.kodilla.bank.homework;
 
-import com.kodilla.school.Grades;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,7 +12,7 @@ public class BankTestSuite {
     public void arrayOfObjectsLengthShouldBeEmptyWhenPassedNumberOfCashMachinesIsZero() {
 
         // test
-        Bank test = new Bank(0);
+        Bank test = new Bank();
 
         // assertion
         assertEquals(0,test.getNumberOfCashMachines());
@@ -22,7 +21,7 @@ public class BankTestSuite {
     @Test
     public void getBalanceAtSpecificCashMachine() {
         //test
-        Bank test = new Bank(1);
+        Bank test = new Bank();
 
         //assertion
         assertEquals(5000, test.getSpecificCashMachineBalance(1));
@@ -31,7 +30,7 @@ public class BankTestSuite {
     @Test
     public void zeroPaymentAtTheSpecificCashMachine() {
         //test
-        Bank test = new Bank(1);
+        Bank test = new Bank();
 
         //assertion
         test.paymentAtSpecificCashMachine(0,1);
@@ -41,7 +40,7 @@ public class BankTestSuite {
     @Test
     public void positivePaymentAtTheSpecificCashMachine() {
         //test
-        Bank test = new Bank(1);
+        Bank test = new Bank();
 
         //assertion
         test.paymentAtSpecificCashMachine(100,1);
@@ -51,7 +50,7 @@ public class BankTestSuite {
     @Test
     public void negativePaymentAtTheSpecificCashMachine() {
         //test
-        Bank test = new Bank(1);
+        Bank test = new Bank();
 
         //assertion
         test.paymentAtSpecificCashMachine(-100, 1);
@@ -61,7 +60,7 @@ public class BankTestSuite {
     @Test
     public void withdrawalIsEqualToBalanceAtSpecificCashMachine() {
         //test
-        Bank test = new Bank(1);
+        Bank test = new Bank();
 
         //assertion
         test.paymentAtSpecificCashMachine(-5000, 1);
@@ -72,7 +71,7 @@ public class BankTestSuite {
     @Test
     public void withdrawalExceedingBalanceAtSpecificCashMachine() {
         //test
-        Bank test = new Bank(1);
+        Bank test = new Bank();
 
         //assertion
         test.paymentAtSpecificCashMachine(-6000, 1);
@@ -83,7 +82,7 @@ public class BankTestSuite {
     @Test
     public void fewPaymentsAndWithdrawalAtSpecificCashMachine() {
         //test
-        Bank test = new Bank(1);
+        Bank test = new Bank();
 
         //assertion
         test.paymentAtSpecificCashMachine(-100, 1);
@@ -95,7 +94,7 @@ public class BankTestSuite {
     @Test
     public void paymentCountAtSpecificCashMachine() {
         //test
-        Bank test = new Bank(1);
+        Bank test = new Bank();
         test.paymentAtSpecificCashMachine(-100, 1);
         test.paymentAtSpecificCashMachine(-100, 1);
         test.paymentAtSpecificCashMachine(100, 1);
@@ -109,7 +108,7 @@ public class BankTestSuite {
     @Test
     public void withdrawalCountAtSpecificCashMachine() {
         //test
-        Bank test = new Bank(1);
+        Bank test = new Bank();
         test.paymentAtSpecificCashMachine(-100, 1);
         test.paymentAtSpecificCashMachine(-100, 1);
         test.paymentAtSpecificCashMachine(100, 1);
@@ -123,7 +122,7 @@ public class BankTestSuite {
     @Test
     public void totalBalance() {
         //test
-        Bank test = new Bank(3);
+        Bank test = new Bank();
         test.paymentAtSpecificCashMachine(2000, 1);
         test.paymentAtSpecificCashMachine(2000, 2);
         test.paymentAtSpecificCashMachine(2000, 3);
@@ -138,7 +137,7 @@ public class BankTestSuite {
     @Test
     public void totalPaymentCount() {
         //test
-        Bank test = new Bank(3);
+        Bank test = new Bank();
         test.paymentAtSpecificCashMachine(2000, 1);
         test.paymentAtSpecificCashMachine(2000, 2);
         test.paymentAtSpecificCashMachine(2000, 3);
@@ -153,7 +152,7 @@ public class BankTestSuite {
     @Test
     public void totalWithdrawalCount() {
         //test
-        Bank test = new Bank(3);
+        Bank test = new Bank();
         test.paymentAtSpecificCashMachine(2000, 1);
         test.paymentAtSpecificCashMachine(2000, 2);
         test.paymentAtSpecificCashMachine(2000, 3);
@@ -168,7 +167,7 @@ public class BankTestSuite {
     @Test
     public void totalAveragePayment() {
         //test
-        Bank test = new Bank(3);
+        Bank test = new Bank();
         test.paymentAtSpecificCashMachine(1000, 1);
         test.paymentAtSpecificCashMachine(2000, 2);
         test.paymentAtSpecificCashMachine(3000, 3);
@@ -183,15 +182,23 @@ public class BankTestSuite {
     @Test
     public void totalAverageWithdrawal() {
         //test
-        Bank test = new Bank(3);
-        test.paymentAtSpecificCashMachine(2000, 1);
-        test.paymentAtSpecificCashMachine(2000, 2);
-        test.paymentAtSpecificCashMachine(2000, 3);
-        test.paymentAtSpecificCashMachine(-1000, 1);
-        test.paymentAtSpecificCashMachine(-2000, 2);
-        test.paymentAtSpecificCashMachine(-3000, 3);
+        Bank test = new Bank();
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.payment(2000);
+        cashMachine.payment(-5000);
+
+//        test.paymentAtSpecificCashMachine(2000, 1);
+//        test.paymentAtSpecificCashMachine(2000, 2);
+//        test.paymentAtSpecificCashMachine(2000, 3);
+//        test.paymentAtSpecificCashMachine(-1000, 1);
+//        test.paymentAtSpecificCashMachine(-2000, 2);
+//        test.paymentAtSpecificCashMachine(-3000, 3);
 
         //assertion
         assertEquals(-2000, test.getTotalAverageWithdrawal());
     }
+
+
+// nie rozpatrzylam sytuacji przy zwracaniu sredniej, ze nie bylo nei bylo zadnej transakcji
+    // dodawanie bankomatu do banku.. zrobic to uzywajac kopiowania tablic
 }
