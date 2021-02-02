@@ -15,6 +15,12 @@ public class CarsListApplication {
         cars.add(new Volvo());
         cars.add(new Renault());
         cars.add(new Volvo());
+
+        System.out.println(cars.size());
+        for(Car car : cars) {
+            CarUtils.displayCarInfo(car);
+        }
+
         cars.remove(1);
         // jak usunąć obiekt cars.remove(Volvo); ... chyba sie nie da
         cars.remove(new Volvo());
