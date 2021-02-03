@@ -17,9 +17,10 @@ public class BookManager {
     }
 
     public static boolean isBookInSet(Book book) {
-        boolean isIt;
-        if (books.contains(book)) isIt = true;
-        else isIt = false;
+        boolean isIt = false;
+        if (books.isEmpty()){
+            if (!books.contains(book)) isIt = true;
+        }
         books.add(book);
         return isIt;
     }
