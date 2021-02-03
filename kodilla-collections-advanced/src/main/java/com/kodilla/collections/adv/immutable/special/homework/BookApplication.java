@@ -7,7 +7,6 @@ import java.util.Set;
 
 public class BookApplication {
     public static void main(String[] args) {
-        Set<Book> books = new HashSet<>();
         Book book1 = BookManager.createBook("Pan Tadeusz", "Adam Mickiewicz");
         Book book2 = BookManager.createBook("Pan Tadeusz", "Adam Mickiewicz");
         Book book3 = BookManager.createBook("Kordian","Julisz Słowacki");
