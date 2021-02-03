@@ -21,7 +21,7 @@ public class BookManager {
     public static void isBookInSet(Book book) {
         boolean isIt = false;
         if (!books.isEmpty()){
-            if (!books.contains(book)) isIt = true;
+            if (books.contains(book)) isIt = true;
         }
         System.out.println("already in the set " + isIt);
     }
