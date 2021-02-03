@@ -12,7 +12,7 @@ public class School {
         }
     }
 
-    public double getNumberofStudentsInSchool() {
+    public int getNumberofStudentsInSchool() {
         int sum = 0;
         for (int number : numberOfStudents)
             sum += number;

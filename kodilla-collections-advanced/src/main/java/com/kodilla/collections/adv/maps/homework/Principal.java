@@ -30,12 +30,12 @@ public class Principal {
         if (this == o) return true;
         if (!(o instanceof Principal)) return false;
         Principal principal = (Principal) o;
-        return Objects.equals(getFirstname(), principal.getFirstname()) && Objects.equals(getLastname(), principal.getLastname()) && Objects.equals(getSchoolName(), principal.getSchoolName());
+        return Objects.equals(firstname, principal.firstname) && Objects.equals(lastname, principal.lastname) && Objects.equals(schoolName, principal.schoolName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFirstname(), getLastname(), getSchoolName());
+        return Objects.hash(firstname, lastname, schoolName);
     }
 
     @Override
