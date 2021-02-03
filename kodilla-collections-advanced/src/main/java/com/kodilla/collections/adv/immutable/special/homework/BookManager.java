@@ -5,11 +5,7 @@ import java.util.Set;
 
 public class BookManager {
 
-    private static Set<Book> books;
-
-    public BookManager() {
-        books = new HashSet<>();
-    }
+    private static Set<Book> books = new HashSet<>();
 
     public static Book createBook(String title, String author) {
         Book book = new Book(title, author);
