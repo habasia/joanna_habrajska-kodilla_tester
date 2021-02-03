@@ -13,15 +13,16 @@ public class BookManager {
 
     public static Book createBook(String title, String author) {
         Book book = new Book(title, author);
+        isBookInSet(book);
+        books.add(book);
         return book;
     }
 
-    public static boolean isBookInSet(Book book) {
+    public static void isBookInSet(Book book) {
         boolean isIt = false;
         if (books.isEmpty()){
             if (!books.contains(book)) isIt = true;
         }
-        books.add(book);
-        return isIt;
+        System.out.println("already in the set " + isIt);
     }
 }
