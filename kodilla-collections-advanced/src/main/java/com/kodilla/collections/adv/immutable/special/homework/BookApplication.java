@@ -2,9 +2,6 @@ package com.kodilla.collections.adv.immutable.special.homework;
 
 // nie czaje tego zadania troche, nie dziala i nie wiem czemu
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class BookApplication {
     public static void main(String[] args) {
         Book book1 = BookManager.createBook("Pan Tadeusz", "Adam Mickiewicz");
