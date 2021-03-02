@@ -20,7 +20,7 @@ public class FlightFinder {
         List<Flight> flightsTableTo = new ArrayList<>();
         List <Flight> flightsTable = FlightRepository.getFlightsTable();
         for (Flight flight : flightsTable) {
-            if (flight.getDeparture().equals(arrival)) {
+            if (flight.getArrival().equals(arrival)) {
                 flightsTableTo.add(flight);
             }
         }
