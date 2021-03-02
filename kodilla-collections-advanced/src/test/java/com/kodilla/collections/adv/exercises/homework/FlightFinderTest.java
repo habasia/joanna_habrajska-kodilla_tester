@@ -21,12 +21,11 @@ class FlightFinderTest {
     }
 
     @Test
-    void findFlightsTo() {
+    void findFlightsTo(String arrival) {
         List<Flight> result = new FlightFinder().findFlightsTo("Wroclaw");
         List<Flight> expectedList = new ArrayList<>();
         expectedList.add(new Flight("Nottingham", "Wroclaw"));
         expectedList.add(new Flight("Newcastle", "Wroclaw"));
         assertEquals(expectedList, result);
-    }
     }
 }

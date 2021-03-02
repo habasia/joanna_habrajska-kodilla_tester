@@ -1,12 +1,9 @@
 package com.kodilla.collections.adv.exercises.homework;
 
-import com.kodilla.collections.adv.exercises.homework.Flight;
-
-
 import java.util.*;
 
 public class FlightRepository {
-    public static List getFlightsTable(String airport) {
+    public static List<Flight> getFlightsTable(String airport) {
         List<Flight> connections = new ArrayList<>();
         List<Flight> flightsTable = new ArrayList<>();
 
