@@ -1,7 +1,5 @@
 package com.kodilla.collections.adv.exercises.homework;
 
-import com.kodilla.collections.adv.exercises.dictionary.EnglishWord;
-import com.kodilla.collections.adv.exercises.dictionary.PartOfSpeech;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

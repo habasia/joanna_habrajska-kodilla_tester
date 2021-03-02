@@ -7,10 +7,10 @@ import java.util.*;
 public class FlightFinder {
     public List<Flight> findFlightsFrom(String departure){
         List<Flight> flightsTableFrom = new ArrayList<>();
-        List <Flight> flightsTable = FlightRepository.getFlightsTable(departure);
-        for (Flight connection : flightsTable) {
-            if (connection.getDeparture().equals(departure)) {
-                flightsTableFrom.add(connection);
+        List <Flight> flightsTable = FlightRepository.getFlightsTable();
+        for (Flight flight : flightsTable) {
+            if (flight.getDeparture().equals(departure)) {
+                flightsTableFrom.add(flight);
             }
         }
         return flightsTableFrom;
@@ -18,10 +18,10 @@ public class FlightFinder {
 
     public List<Flight> findFlightsTo(String arrival){
         List<Flight> flightsTableTo = new ArrayList<>();
-        List <Flight> flightsTable = FlightRepository.getFlightsTable(arrival);
-        for (Flight connection : flightsTable) {
-            if (connection.getDeparture().equals(arrival)) {
-                flightsTableTo.add(connection);
+        List <Flight> flightsTable = FlightRepository.getFlightsTable();
+        for (Flight flight : flightsTable) {
+            if (flight.getDeparture().equals(arrival)) {
+                flightsTableTo.add(flight);
             }
         }
         return flightsTableTo;
