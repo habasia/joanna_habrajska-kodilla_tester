@@ -1,17 +1,9 @@
 package com.kodilla.collections.adv.exercises.homework;
 
-import com.kodilla.collections.adv.exercises.homework.Flight;
-
-
 import java.util.*;
 
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
+//nie działają mi tutaj rzeczy, nie umiem zrobić, żeby działały :(
 public class FlightFinder {
     public List<Flight> findFlightsFrom(String departure){
         List<Flight> flightsTableFrom = new ArrayList<>();
