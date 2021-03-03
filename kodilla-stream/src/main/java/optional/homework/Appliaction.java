@@ -6,10 +6,12 @@ import java.util.Optional;
 
 public class Appliaction {
     public static void main(String[] args) {
-        /*List<Student> students = new ArrayList<>();
+        List<Student> students = new ArrayList<>();
         students.add(new Student("Alinka", new Teacher("Pan Paprotka")));
         students.add(new Student("Halinka", new Teacher("Pan Kaktus")));
         students.add(new Student("Macius", null));
+
+        /* hpomoz pliska
 
         Optional<Teacher> optionalTeacher = Optional.ofNullable(//teacher? nie wiem jak dosięgnąć tej zmiennej i co tutaj wpisać, żeby działało. proszę o pomoc);
 
@@ -17,7 +19,7 @@ public class Appliaction {
 
             System.out.println("student: " + student.getName() + " teacher: " + optionalTeacher.orElse(new Teacher("<undefined>").getName()));
         }
+        */
 
-         */
     }
 }
