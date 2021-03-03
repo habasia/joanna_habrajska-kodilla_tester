@@ -11,7 +11,7 @@ public class Appliaction {
         students.add(new Student("Halinka", new Teacher("Pan Kaktus")));
         students.add(new Student("Macius", null));
 
-        Optional<Teacher> optionalTeacher = Optional.ofNullable(//teacher? nie wiem co tutaj wpisać, żeby działało. proszę o pomoc);
+        Optional<Teacher> optionalTeacher = Optional.ofNullable(//teacher? nie wiem jak dosięgnąć tej zmiennej i co tutaj wpisać, żeby działało. proszę o pomoc);
 
         for (Student student : students) {
 
