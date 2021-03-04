@@ -1,5 +1,6 @@
 package optional.homework;
 
+import javax.xml.transform.sax.SAXResult;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -11,15 +12,13 @@ public class Appliaction {
         students.add(new Student("Halinka", new Teacher("Pan Kaktus")));
         students.add(new Student("Macius", null));
 
-        /* hpomoz pliska
-
-        Optional<Teacher> optionalTeacher = Optional.ofNullable(//teacher? nie wiem jak dosięgnąć tej zmiennej i co tutaj wpisać, żeby działało. proszę o pomoc);
-
         for (Student student : students) {
+            Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());//teacher? nie wiem jak dosięgnąć tej zmiennej i co tutaj wpisać, żeby działało. proszę o pomoc);
 
-            System.out.println("student: " + student.getName() + " teacher: " + optionalTeacher.orElse(new Teacher("<undefined>").getName()));
+            Teacher teacherName = optionalTeacher.orElse(new Teacher("<undefined>"));
+
+
+            System.out.println("student: " + student.getName() + " teacher: " + teacherName.getName());
         }
-        */
-
     }
 }
