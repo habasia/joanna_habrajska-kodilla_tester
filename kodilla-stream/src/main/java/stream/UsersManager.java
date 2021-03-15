@@ -1,10 +1,19 @@
 package stream;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class UsersManager {
     public static void main(String[] args) {
-        UsersRepository.getUsersList()
+        List<String> usernames = UsersRepository.getUsersList()   // [1]
                 .stream()
-                .map(u -> u.getUsername())
-                .forEach(un -> System.out.println(un));
+                .filter(u -> u.getGroup().equals("Chemists"))
+                .map(UsersManager::getUserName)
+                .collect(Collectors.toList());                        // [2]
+        System.out.println(usernames);
+    }
+
+    public static String getUserName(User user) {
+        return user.getUsername();
     }
 }
