@@ -21,14 +21,9 @@ public class Warehouse {
     }
 
     public Order getOrder(String number) throws OrderDoesntExistException {
-        orders
+        return orders
                 .stream()
                 .filter(n -> n.getNumber().equals(number))
-                .map(Warehouse::getNumber);
-        throw new OrderDoesntExistException();
-    }
-
-    public static String getNumber(Order order) {
-        return order.getNumber();
+                .findAny().orElseThrow(() -> new OrderDoesntExistException());
     }
 }

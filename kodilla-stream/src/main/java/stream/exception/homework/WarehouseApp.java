@@ -8,7 +8,6 @@ public class WarehouseApp {
         warehouse.addOrder("111");
         warehouse.addOrder("123");
         warehouse.addOrder("222");
-        //System.out.println(warehouse.getOrders().toString());
 
         try {
             Order getNonExistingOrder = warehouse.getOrder("111");
