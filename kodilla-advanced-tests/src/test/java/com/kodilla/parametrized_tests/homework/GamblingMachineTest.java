@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,7 +35,7 @@ class GamblingMachineTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/gamblingMachineUnacceptableLengthOfSet.csv")
-    public void failWhenThereAreNotEnoughNumbers(String input) throws InvalidNumbersException {
+    public void failWhenSetIsTooShort(String input) throws InvalidNumbersException {
         Set<Integer> numbers = Arrays.stream(input.split(" ")).map(Integer::parseInt).collect(Collectors.toSet());
         GamblingMachine gamblingMachine = new GamblingMachine();
         assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(numbers));
