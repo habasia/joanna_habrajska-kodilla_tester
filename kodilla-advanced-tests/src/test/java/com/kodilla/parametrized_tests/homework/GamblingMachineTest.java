@@ -15,7 +15,7 @@ class GamblingMachineTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/gamblingMachineUnacceptableValues.csv")
-    public void shouldUseValidNumbers(int one, int two, int three, int four, int five, int six) throws InvalidNumbersException {
+    public void shouldAcceptOnlyValidSetOfNumbers(int one, int two, int three, int four, int five, int six) throws InvalidNumbersException {
         Set<Integer> integers = new HashSet<>();
         integers.add(one);
         integers.add(two);
@@ -32,9 +32,9 @@ class GamblingMachineTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/gamblingMachineUnacceptableLengthOfSet.csv")
-    public void shouldUse(String input) {
-        Set<Integer> inputSet = Stream.of(input.).map(Integer::valueOf).collect(Collectors.toCollection(HashSet::new));
+    public void shouldThrowException(String input) {
+        Set<Integer> inputSet = Stream.of(input.split(",")).map(Integer::valueOf).collect(Collectors.toCollection(HashSet::new));
 
-        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(inputSet), "Wrong numbers provided");
+        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(inputSet));
     }
 }
