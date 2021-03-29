@@ -14,10 +14,8 @@ public class CarOfTheSeason {
         Car car;
         if (LocalDate.now().getMonthValue() >=1 || LocalDate.now().getMonthValue() <=3) {
             car = new SUV();
-
         } else if (LocalDate.now().getMonthValue() >=7 || LocalDate.now().getMonthValue() <=9) {
             car = new Cabrio();
-
         } else {
             car = new Sedan();
         }

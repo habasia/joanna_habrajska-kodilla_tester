@@ -24,7 +24,7 @@ public class CarOfTheSeasonTestSuite {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
         Car car = (Car) context.getBean("carChoice");
         boolean headlights = car.hasHeadlightsTurnedOn();
-        Assertions.assertTrue(headlights);
+        Assertions.assertFalse(headlights);
     }
 }
 
